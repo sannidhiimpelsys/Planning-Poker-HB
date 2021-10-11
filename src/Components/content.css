@@ -1,0 +1,18 @@
+.redLine{
+    /* height: 13.86px; */
+    width:100%;
+    position: absolute;
+    z-index: -1;
+    margin-top: 1%;
+}
+.Block-Background{
+    width: 100%; 
+    position:absolute;
+    z-index:-1;
+}
+.Pointing-Poker-Text{
+    width:100%;
+    position: absolute;
+    z-index: -1;
+
+}
