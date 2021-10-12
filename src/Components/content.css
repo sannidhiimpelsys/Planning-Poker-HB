@@ -1,18 +1,83 @@
-.redLine{
-    /* height: 13.86px; */
-    width:100%;
+.contents{
+    width: 100%;
+    background-image:url("..//assets//Lines//Rectangle 4216.svg"),url("..//assets//Lines//Rectangle 4215.svg"),url("..//assets//Lines//Rectangle 4216.svg");
+    height: 50%;
+    background-size: auto 12px, auto 218px ,auto 12px;
+    background-position:
+     top 45px left 0,
+     center,
+     bottom 40px left 0;
+    background-repeat: repeat-x, no-repeat, repeat-x;
+    /* background-size: cover; */
+    /* border-top: 12px solid crimson;
+    border-bottom:  12px solid crimson; */
     position: absolute;
-    z-index: -1;
-    margin-top: 1%;
-}
-.Block-Background{
-    width: 100%; 
-    position:absolute;
-    z-index:-1;
+    top: 214px;
 }
 .Pointing-Poker-Text{
-    width:100%;
+    z-index: 300;
+    height: 200px;
+    width: 456px;
+    margin-top: 65.92px;
+    margin-left: 51px;
+  }
+.Pointing-Poker-Dice{
     position: absolute;
-    z-index: -1;
-
+    left: 339.27px;
+    top: 127.93px;   
+   
 }
+  input[type=text], input[type=password] {
+    width: 408px;
+    padding: 12px 20px;
+    margin: 10px  31.76px  10px 27.95px ;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;   
+  }
+
+  .loginDivBlock {
+      padding: 8px;
+      background-color: white;
+      width: 467.71px;
+      box-shadow: 0px 3px 6px #00000029;
+      border: 2px solid #C10E21;
+      border-radius: 22px;
+      float: right;
+      margin-right: 30px;
+      display: flex;
+      flex-direction: column ;   
+  }
+
+ label{
+     font-family: Montserrat;
+     
+     
+ }
+
+ .loginHead {
+     font-family: Montserrat;
+     font-size : 26px;
+     margin-bottom: 8px;
+     color:#C10E21;
+     /* margin-left: 27.95px; */
+     margin-top: 26.74px;
+     font-weight: 900;
+     margin-left: 27.95px;
+
+ }
+  
+ 
+  .loginButton{
+      background-color: #C10E21;
+      font-size: 16px;
+      color:white;
+      width:121px;
+      height:41px;
+      border-radius: 21px;
+      font-family: Montserrat;
+      margin-left: 314.95px;
+      margin-right: 49p;
+      margin-bottom: 20px;
+  }
+  
