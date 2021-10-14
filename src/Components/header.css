@@ -11,5 +11,10 @@
 
 /* Logo CSS */
 .site-logo{
+
     margin: 28px 0px 0px 30px;
-}
+    }
+
+  header{
+    width: 50%;
+  }

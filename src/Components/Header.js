@@ -6,7 +6,7 @@ const Header = () =>{
 //    const twox = './assets/Logo/HB-Logo@2x.png';
     return(
     <header>
-        <div class="site-logo">
+        <div className="site-logo container">
             <img src={Logo} srcSet={`${require('../assets/Logo/HB-Logo.png')} 1x,
             ${require('../assets/Logo/HB-Logo@2x.png')} 2x`} alt="logserfgo" />
         </div>

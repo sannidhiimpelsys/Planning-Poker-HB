@@ -1,0 +1,23 @@
+.Mountain{
+    background-image: url('../assets/Mountain/Asset 2@4x.png');
+    background-size: 2000px 200px;
+    background-repeat: repeat-x;
+    /* background-position:bottom -50px left -50px ; */
+    position: fixed;
+    bottom: 0;
+    width: 120%;
+    margin-left: -30px;
+    
+  }
+  .Mountain2{
+    float: right;
+  }
+
+
+  @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) { 
+    .Mountain {
+      background-image: url('../assets/Mountain/Asset 2@4x@2x.png');
+    }
+} 

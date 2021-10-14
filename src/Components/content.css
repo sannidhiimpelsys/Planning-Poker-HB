@@ -1,67 +1,75 @@
-.contents{
-    width: 100%;
-    background-image:url("..//assets//Lines//Rectangle 4216.svg"),url("..//assets//Lines//Rectangle 4215.svg"),url("..//assets//Lines//Rectangle 4216.svg");
-    height: 50%;
-    background-size: auto 12px, auto 218px ,auto 12px;
-    background-position:
-     top 40px left 0,
-     center,
-     bottom 38px left 0;
-    background-repeat: repeat-x, no-repeat, repeat-x;
-    position: absolute;
-    top: 214px;
+#contents {
+    
+    background-color: #343A40;
+    border-top: 12px solid #C10E21;
+    border-bottom: 12px solid #C10E21;
+    overflow: visible !important;
+    height: 230px;
+    display: flex;
+    margin-top:110px ;
+
 }
-.Pointing-Poker-Text{
-    z-index: 300;
-    height: 200px;
-    width: 456px;
-    margin-top: 65.92px;
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.postioning{
+    position: relative;
+    overflow: hidden;
     margin-left: 51px;
+    height:208px;
+    width: 456px;
+}
+
+ .title{   
+    width: 50%;
+} 
+
+#Pointing-Poker-Text{
+    position:absolute;
+    left:0;
   }
-.Pointing-Poker-Dice{
-    position: absolute;
-    left: 339.27px;
-    top: 127.93px;   
-   
+#Pointing-Poker-Dice{
+    position:absolute;
+    right: 10px;  
+    bottom: -20px;
 }
   input[type=text], input[type=password] {
-    width: 408px;
-    padding: 12px 20px;
-    margin: 10px  31.76px  10px 27.95px ;
-    display: block;
+    width: 300px;
+    display: flex;
     border: 1px solid #ccc;
-    box-sizing: border-box;   
+    box-sizing: border-box; 
+    align-self: center;
+    width: 408px;
+    height: 40px;     
   }
 
-  .loginDivBlock {
-      padding: 8px;
+  #loginDivBlock {
       background-color: white;
+      
       width: 467.71px;
       box-shadow: 0px 3px 6px #00000029;
       border: 2px solid #C10E21;
       border-radius: 22px;
       float: right;
-      margin-right: 30px;
       display: flex;
       flex-direction: column ;   
-      margin-top: 20px;
+      /* margin-top: -120px; */
+       height:282.28px; 
+      z-index: 900;
   }
 
- label{
-     font-family: Montserrat;
-     
-     
- }
 
- .loginHead {
+ #loginHead {
      font-family: Montserrat;
      font-size : 26px;
      margin-bottom: 8px;
      color:#C10E21;
-     /* margin-left: 27.95px; */
+    width: 300px;
+    margin: 0;
      margin-top: 26.74px;
-     font-weight: 900;
-     margin-left: 27.95px;
+     font-weight: 1000;
+     
 
  }
   
@@ -74,8 +82,67 @@
       height:41px;
       border-radius: 21px;
       font-family: Montserrat;
-      margin-left: 314.95px;
-      margin-right: 49p;
-      margin-bottom: 20px;
+      margin-left:288px;  
+      margin-bottom: 30px;
+      opacity: 1;
   }
   
+  .mainContent{
+      display: flex;
+      height: max-content;
+      flex-direction: column;
+  }
+
+  .cards{
+      width: 467.71px;
+      display: flex;
+      margin-top: -140px; 
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+     
+      
+  }
+ 
+
+.cardT{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.cardB{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+.CardH{
+    display:flex;
+    justify-content: space-between;
+    width: 368.8px;
+}
+
+.Input1{
+    margin-bottom: 26px !important;
+    margin-top : 16px !important;
+    padding:10px;
+}
+.Input2{
+    margin-bottom: 21px !important;
+    padding:10px;
+}
+
+/* Cards Vertical */
+.outerLogin{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+}
+#cardVertical{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 218px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
