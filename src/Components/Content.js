@@ -40,7 +40,7 @@ const  Content= () => {
                      <img src={Card7} className="cardV"alt="Card of ..." />
                      <img src={Card8} className="cardV" alt="Card of ..."  />
                   </div>
-                  <div id='loginDivBlock' className="container">
+                  <div id='loginDivBlock' className="Login">
                      <form >
                         <p id = "loginHead"> LOGIN </p>
 

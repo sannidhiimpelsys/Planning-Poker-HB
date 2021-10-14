@@ -3,6 +3,8 @@
     background-color: #343A40;
     border-top: 12px solid #C10E21;
     border-bottom: 12px solid #C10E21;
+    background-repeat: repeat-x;
+    background-size: cover;
     overflow: visible !important;
     height: 230px;
     display: flex;
@@ -41,7 +43,8 @@
     box-sizing: border-box; 
     align-self: center;
     width: 408px;
-    height: 40px;     
+    height: 40px;
+    margin: auto;     
   }
 
   #loginDivBlock {
@@ -66,7 +69,7 @@
      margin-bottom: 8px;
      color:#C10E21;
     width: 300px;
-    margin: 0;
+    margin: 14px;
      margin-top: 26.74px;
      font-weight: 1000;
      
