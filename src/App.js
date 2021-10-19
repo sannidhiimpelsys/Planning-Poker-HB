@@ -1,14 +1,17 @@
-import Header from './Components/Header';
-import Content from './Components/Content';
-import Footer from './Components/Footer';
+
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './Components/Login';
+import Poker from './Components/Poker';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Content />
-      <Footer />
+      <Router>
+        <Route path="/" exact component={ Login } />
+        <Route path="/poker" component={ Poker } /> 
+      </Router>
+     
     </div>
   );
 }

@@ -16,26 +16,26 @@
     flex-wrap: wrap;
 }
 .postioning{
-    position: relative;
-    overflow: hidden;
+    
+    
     margin-left: 51px;
-    height:208px;
+    height:200px;
     width: 456px;
+    margin-top: -10px;
+
+    
 }
 
  .title{   
     width: 50%;
 } 
 
-#Pointing-Poker-Text{
-    position:absolute;
-    left:0;
-  }
-#Pointing-Poker-Dice{
+
+/* #Pointing-Poker-Dice{
     position:absolute;
     right: 10px;  
-    bottom: -20px;
-}
+    bottom: -20px; */
+
   input[type=text], input[type=password] {
     width: 300px;
     display: flex;
