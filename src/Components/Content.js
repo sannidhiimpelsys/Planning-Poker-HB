@@ -44,11 +44,9 @@ const  Content= () => {
                   </div>
                   <div id='loginDivBlock' className="Login">
                      <form action="form.html" method="post" >
-                        <p id = "loginHead"> LOGIN </p>
-
-                        <input className="Input1" type="text" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
-
-                        <input className="Input2"type="password" placeholder="Room ID" name="psw" required onChange={(event) =>setRoom(event.target.value)}/>
+                        <p aria-label="Login Credentials" id = "loginHead"> LOGIN </p>
+                        <input className="Input1" type="text" aria-label="Enter User ID" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
+                        <input className="Input2"type="text" aria-label="Enter Room ID" placeholder="Room ID" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
 
                         <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/poker?name=${name}&room=${room}`}>
                         <button type="submit" className="loginButton" >Enter</button>
