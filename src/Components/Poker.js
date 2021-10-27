@@ -138,7 +138,7 @@ const Poker = () => {
           setOn(!on)
           
         }
-        console.log(window.location.href)
+        
         function setnames(value) {
           setName(value)
         }
@@ -196,6 +196,7 @@ const Poker = () => {
                     
                         <StoryDescription socket={socket}/>
                     </div>
+               
                     <div className="Cards">
                     <div className ="cardK">
                     {flag !== 1 ? (

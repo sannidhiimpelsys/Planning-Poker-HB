@@ -38,8 +38,9 @@ header{
 }
 .Cards{
     display: flex;
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    margin-bottom: 10px;
     left:50%;
     transform: translateX(-50%);
 }

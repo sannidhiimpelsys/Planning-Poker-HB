@@ -33,12 +33,13 @@ const Table = (props) =>{
                         <Backcard/>
                       ))}
                       </div>
+                      <div className="Results">
                       {valuelist.indexOf("waiting")<0 ? (
                           <Result
                           valuelist = {valuelist}
                           goback = {props.goback}/>
                       ):(<p></p>)}
-
+                  </div>
         </div>
     )
 }

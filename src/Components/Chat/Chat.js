@@ -14,8 +14,16 @@ const Chat = (props) => {
   const name = props.name
   const chatT = props.chatT
 console.log(chatT)
+
+function opnMsg(){
+ /* document.getElementById("myMsg").style.width= "25%"; */
+}
+
+
   return (
-   
+    <>
+    <button onClick= { opnMsg() }  > hello </button>
+   <div id="myMsg" className='overlay'>
     <div  className="outerContainer">
       <div className="container ChatInner">
         <InfoBar room={room} />
@@ -27,6 +35,8 @@ console.log(chatT)
         />
       </div>
     </div>
+  </div>
+  </>
     
   );
 };
