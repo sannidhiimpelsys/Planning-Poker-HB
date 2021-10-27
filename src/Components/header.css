@@ -18,3 +18,25 @@
   header{
     width: 50%;
   }
+
+/* Seconnd page */
+
+
+  .rooms{
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: center;
+  }
+
+  .Random-img{
+    width:180.8px;
+    height:78.05px;
+    margin-top:34.8px;
+  }
+
+  .Random-imgs{
+   
+    margin-top:25px;
+  }
+  

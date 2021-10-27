@@ -13,6 +13,7 @@ import Card9 from '../assets/Cards/Vertical/Group 7422.svg'
 import Card10 from '../assets/Cards/Vertical/Group 21173.svg'
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
+
 // Title
 
 import planningTitle from '../assets/Title/Group 58173.svg' 
@@ -22,6 +23,8 @@ import '../Components/content.css'
 const  Content= () => {
       const [name, setName] = useState('');
       const [room, setRoom] = useState('');
+      const [cardVal, setCardVal] = useState('');
+   
     return (
          <div className="content" id ="contents"> 
                <div className="title ">
@@ -44,11 +47,29 @@ const  Content= () => {
                   </div>
                   <div id='loginDivBlock' className="Login">
                      <form action="form.html" method="post" >
-                        <p aria-label="Login Credentials" id = "loginHead"> LOGIN </p>
+                        <p aria-label="Create a room" id = "loginHead"> CREATE/JOIN </p>
                         <input className="Input1" type="text" aria-label="Enter User ID" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
                         <input className="Input2"type="text" aria-label="Enter Room ID" placeholder="Room ID" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
+                       
+                       <select defaultValue id='selectOpt' className="form-control w-75 opt" name="" required onClick={(event) => {
+                         
+                          setCardVal(event.target.value)}} >
+                           <option value='' >Select</option>
+                           <option value={["0","1","2","3","5","7","13","?"]}>Fibb [0,1,2,3,5,7,13,?]</option>
+                           <option value={["0","1/2","2","3","5","8","13","?"]}>Modified Fibb [0,1,2,3,5,8,13,?]</option>
+                       </select>
+                       {/* <div class="dropdown">
+                          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown link
+                           </a>
 
-                        <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/poker?name=${name}&room=${room}`}>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                           <a class="dropdown-item" href="#">Action</a>
+                           <a class="dropdown-item" href="#">Another action</a>
+                           <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        </div> */}
+                        <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/poker?name=${name}&room=${room}&cardVale=${cardVal}`}>
                         <button type="submit" className="loginButton" >Enter</button>
                         </Link>
                      </form>

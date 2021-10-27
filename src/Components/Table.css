@@ -1,0 +1,30 @@
+.theTable{
+    
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: #ffff;
+}
+.cardK{
+
+}
+.placedcard{
+     height:62px;
+     width:44px;
+     background-color: #A7D9D8;
+     border:1px solid #0D7882;
+     border-radius: 4px;
+     opacity: 1;
+     cursor: pointer;
+    
+}
+
+.backcard{
+    height:62px;
+    width:44px;
+    background-color: white;
+    border: 1px solid #00BACD;
+    border-radius: 4px;
+    opacity: 1;
+    cursor: pointer;
+}

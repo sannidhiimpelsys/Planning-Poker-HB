@@ -1,0 +1,42 @@
+.infoBar {
+    display: flex;
+    
+    justify-content: space-between;
+    
+    border-radius: 4px 4px 0 0;
+    height: 53px;
+   
+   margin-top: 18px;
+   margin-left: 13px;
+  }
+  .icon{
+    font-size: 20px;
+  }
+  
+  .leftInnerContainer {
+    
+    display: flex;
+   
+    color: rgb(0, 0, 0);
+    align-items: flex-end;
+   size: 18px;
+    
+  }
+  .textMes{
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+  }
+  
+  .rightInnerContainer {
+    display: flex;
+   height:40px;
+    
+   
+  }
+  
+  
+  

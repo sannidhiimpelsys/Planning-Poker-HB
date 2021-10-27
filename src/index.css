@@ -3,7 +3,9 @@
   padding: 0px;
   margin: 0px;
 }
-
+.off{
+  display: none;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,8 +21,20 @@ code {
 
 }
 
-@media screen and (max-width:1106px){
+.cardK{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
 
+ 
+  
+
+@media screen and (max-width:1106px){
+  .postioning{
+    margin-left: 0px !important;
+  }
   .content{
     display: flex;
     flex-direction: column !important;
@@ -36,6 +50,7 @@ code {
  
   .cards{
     margin-top:20px !important;
+    margin-bottom: 30px;
     float: left;
   }
   .CardH, .cardV{
@@ -44,6 +59,7 @@ code {
   }
   .title{
     width: auto !important;
+    margin-top: 10px;
   }
 }
 
@@ -54,6 +70,7 @@ code {
   align-items: center;
   margin-top: 100px;
 }
+
 }
 @media screen and (max-width: 1332px)
 {
@@ -61,9 +78,10 @@ code {
     display: none !important;
    
   }
+ 
 }
 
-/* Media query for below  550 not fixed*/
+/* Media query for below  550 fixed*/
 @media screen and (max-width:550px){
   .Root{
     width: 200%;
@@ -71,5 +89,14 @@ code {
 
   .content{
     width:100% !important;
+  }
+  .cards{
+    margin: 30px;
+  }
+  .postioning{
+    margin-left: 0px !important;
+  }
+  .title{
+    margin-top: 10px;
   }
 }

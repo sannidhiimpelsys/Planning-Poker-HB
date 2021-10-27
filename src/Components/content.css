@@ -87,7 +87,7 @@
       border-radius: 21px;
       font-family: Montserrat;
       margin-left:288px;  
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       opacity: 1;
   }
   
@@ -154,4 +154,9 @@
     height: 218px;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+#selectOpt{
+    margin-left : 27px;
+    width: 150px !important;
 }

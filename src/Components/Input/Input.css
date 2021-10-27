@@ -1,0 +1,93 @@
+
+.form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: 1px solid #E3E3E3;
+  }
+  
+  #inputs {
+    
+    width: 100% !important;
+    height: 76px !important;
+    font-size: 12pt;
+    border: none;
+    
+   
+  }
+  .inputDiv{
+    padding: 2px;
+    background: #FBFBFB 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 0px 6px #00000029;
+    opacity: 1;
+    border: 1px solid #E3E3E3;
+    margin: 5px;
+  }
+  
+  .chatButton{
+  background-color: #C10E21;
+  font-size: 16px;
+  color: white;
+  width: 121px;
+  height: 41px;
+  border-radius: 21px;
+  font-family: Montserrat;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  float: right;
+  opacity: 1;
+}
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
+  
+  .sendButton {
+    color: rgb(0, 0, 0) !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #2ce25a;
+    padding: 10px;
+    display: inline-block;
+    border: none;
+    font-size: large;
+  
+  }
+  
+  @media (min-width: 590px) and (max-width: 818px) {
+    .sendButton {
+      width: 20%;
+  
+      padding: 1px;
+    }
+    .input {
+      width: 80%;
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 400px) and (max-width: 589px) {
+    .sendButton {
+      width: 20%;
+  
+      padding: 1px;
+    }
+    .input {
+      width: 80%;
+      font-size: 14px;
+    }
+  }
+  @media (min-width: 360px) and (max-width: 399px) {
+    .sendButton {
+      width: 20%;
+      font-size: 10px;
+      padding: 1px;
+    }
+    .input {
+      width: 80%;
+      font-size: 12px;
+    }
+  }
+  

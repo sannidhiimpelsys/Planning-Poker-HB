@@ -1,0 +1,33 @@
+.story{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top:100px;
+    display:none;
+}
+
+.send{
+    background-color: gold;
+       border-radius: 10px;
+       padding-left: 2px;
+       padding-right: 2px;
+       margin-left:5px ;
+     
+    }
+
+    .form-story{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .textArea{
+        border-radius: 20px;
+        padding-top:5px;
+        padding-left:3px;
+
+    }
+
+    
