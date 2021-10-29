@@ -2,7 +2,7 @@ import Logos from "../assets/Logo/HB-Logo.png";
 import './header.css';
 import planningTitle from '../assets/Title/Group 58173.svg'
 const Logo = (props) => {
-    const name= props.name;
+    
     const room = props.room;
     room.toUpperCase();
     return ( <div className="d-flex flex-row head2 p-0">
@@ -18,7 +18,7 @@ const Logo = (props) => {
                      <img className="Random-img" src={planningTitle} alt="Title Text Pointing Poker" />
                     
                   </div>
-                  <p>{name}</p>
+                  
     </div> 
      );
 }

@@ -12,7 +12,7 @@ const InfoBar = ({ room }) => (
      
     </div>
     <div className="rightInnerContainer">
-      <i  className="slide">x</i>
+     
     </div>
   </div>
 );

@@ -12,17 +12,18 @@ const Chat = (props) => {
   const setMessage = props.setMessage
   const sendMessage = props.sendMessage
   const name = props.name
-  const chatT = props.chatT
-console.log(chatT)
+ 
 
-function opnMsg(){
- /* document.getElementById("myMsg").style.width= "25%"; */
-}
+
+// function closMsg(){
+//   setTimeout(() =>{document.getElementById('myMsg').style.width= "0%"}, 1000)
+// }
 
 
   return (
     <>
-    <button onClick= { opnMsg() }  > hello </button>
+   
+    {/* <div onClick= { closMsg() }  > hello </div> */}
    <div id="myMsg" className='overlay'>
     <div  className="outerContainer">
       <div className="container ChatInner">

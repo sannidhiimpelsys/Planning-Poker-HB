@@ -5,14 +5,14 @@ import React, { useEffect, useState } from "react";
 import io from 'socket.io-client';
 import queryString from 'query-string';
 import Logo from './Logo';
-import ShareLink from './ShareLink';
-import Chat from '../Components/Chat/Chat';
+import ShareLink from './invite/ShareLink';
+
 import StoryDescription from './StoryDescription';
 import './poker.css'
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router";
 import Card from './Card';
 import Table from "./Table";
-
+import Hamburger from "./Hamburger"
 
 const socket = io.connect("http://localhost:3001");
 var chooseTime=0;
@@ -20,8 +20,9 @@ var chooseTime=0;
 var series =""
 var cardVales =""
 var value ="";
+
 const Poker = () => {
-  
+    const history = useHistory();
     var [name, setName] = useState('');
     const [room, setRoom] = useState('');
     var [cardVale, setCardVal] = useState([""]);
@@ -36,17 +37,21 @@ const Poker = () => {
     const [flag,setFlag]=useState(false);
 
     const [on, setOn] = useState(false);
-
     const [chatT, setChatT] = useState(false);
+    const [onBlur, setOnBlur] = useState(true);
+    var [noName,setNoName]=useState(false);
+ 
+    
 
     useEffect ( () => {
         var {name , room, cardVale} = queryString.parse(location.search);
-        
+       
        
         setRoom(room);
-       
-       
         setName(name);
+        if(!name){
+          setNoName(true);
+        }
         series =cardVale
         console.log(series)
         cardVale = series.split(',');
@@ -67,7 +72,9 @@ const Poker = () => {
         });
         
     }, [socket, location.search]);   
-
+    useEffect( () =>{
+     
+    },[socket])
     //Chat
 
     useEffect(() => {
@@ -134,27 +141,22 @@ const Poker = () => {
       };
       //Name Functions
         function handleFlag(e) {
-          e.preventDefault()
-          setOn(!on)
           
+          setName(value);
+          setOn(!on)
+          console.log(value)
+          history.push(`/poker?name=${value}&room=${room}&cardVale=${series}`, { some: 'state' }); 
         }
-        
-        function setnames(value) {
-          setName(value)
-        }
+
         const Log = (props) => { 
 
           return(
           <div className={on ? "off" : null} id='name'>
             <form action="form.html" method="POST"  >
-              <input type="text" name="sda" id="asd" placeholder="Enter name"  value={name}
-              onChange={({ target: { value } }) => setName(value)}  required/>
-
-
-              <Link onClick={e => (!name) ?  handleFlag(e) : null} to={`/poker?name=${name}&room=${room}&cardVale=${series}`}>
-                
-                <button type="submit" className="loginButton" onClick= {(e)=>{value = e.target.value; setnames(value);setFlag(true)}} >Enter</button>
-              </Link>
+              <input type="text" name="sda" id="asd" placeholder="Enter name" 
+              onChange={(e) =>{value = e.target.value}}  required/> 
+              <button type="button" className="loginButton" onClick= {(e)=>{handleFlag(value)}}  >Enter</button>
+              
             </form>
           </div>)
 
@@ -166,32 +168,35 @@ const Poker = () => {
 
 
         function Status(props){
-          const flag = props.flag;
-          if(flag){
-            return <RemoveLog />
+          const noName = props.noName;
+          console.log(noName)
+          if(noName){
+            return <Log />
           }
-          return <Log />
+          return <RemoveLog />
+          
         }
 
      
       
     return (  
              
-              <div  className="Planning-Poker-Main container-fluid flex-column">
-                    {/* <Status flag={states} />   */}
-                    {/* <NameSet /> */}
-                    
+              <div  className={onBlur ?  "Blur": "Planning-Poker-Main container-fluid flex-column"}>
+                    <div className="unBlurred" >
+                      <Status noName={noName} />  
+                    </div>
                     <div className="NavBar">
                       <header className="d-flex Title">
                         <Logo className='hbLogo' room={room} name={name} />
                         
                         <div>
-                        <ShareLink room={room} cardVal={cardVale}/>
-                        <button   >Transition</button>
+                        {/* <ShareLink room={room} cardVal={cardVale}/> */}
+                        <Hamburger chatT={chatT} setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages}/>
+                       
                         </div>
                         </header>
                     </div>
-                    <Chat chatT={chatT} setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} />
+                    
                     <div className="storyDes container">
                     
                         <StoryDescription socket={socket}/>

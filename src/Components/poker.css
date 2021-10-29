@@ -19,6 +19,7 @@ header{
 }
 .Title{
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 .cardBox{
@@ -56,3 +57,12 @@ header{
 }
 
 
+.BackgroundBlur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width:100%;
+    z-index: -900;
+    height:100vh;
+    margin: -100vh; */
+}
