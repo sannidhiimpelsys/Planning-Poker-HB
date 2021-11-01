@@ -190,7 +190,7 @@ const Poker = () => {
                         <Logo className='hbLogo' room={room} name={name} />
                         
                         <div>
-                        {/* <ShareLink room={room} cardVal={cardVale}/> */}
+                        <ShareLink room={room} cardVal={cardVale}/>
                         <Hamburger chatT={chatT} setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages}/>
                        
                         </div>

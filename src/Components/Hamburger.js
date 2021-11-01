@@ -1,5 +1,5 @@
 import "./Hamburger.css"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from 'styled-components';
 import Chat from '../Components/Chat/Chat';
 
@@ -53,9 +53,8 @@ flex-direction: column;
 justify-content: space-around;
 width: 2rem;
 height: 2.5rem;
-
 border: 4px solid #C10E21;
-border-radius:
+border-radius: 5px;
 cursor: pointer;
 padding: 0;
 z-index: 10;

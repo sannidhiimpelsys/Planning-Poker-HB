@@ -1,11 +1,13 @@
 import React from "react";
 
 function popup(){
+
+    console.log(window.location.href)
+
     return (
         <div>
 
-           <h1>popup</h1>
-
+          
         </div>
     );
 }
