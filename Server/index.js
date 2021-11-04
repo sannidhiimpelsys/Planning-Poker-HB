@@ -8,7 +8,7 @@ var roomUser=[];
 
 app.use(cors());
 app.use(router);
-const {addUser, removeUser, getUser, getUsersInRoom, addWorth, reset, checkName} = require('./users.js');
+const {addUser, removeUser, getUser, getUsersInRoom, addWorth, reset} = require('./users.js');
 //Listening Port
 const server = app.listen(3001,()=>
 {
@@ -17,7 +17,7 @@ const server = app.listen(3001,()=>
 
 const io = new Server(server,{
     cors: {
-        origin: "http://localhost:3000",
+        origin: "*",
         methods: ["GET","POST"],
     },
 });
@@ -87,12 +87,13 @@ io.on("connection",function(socket){
         }
     })
 
-    // socket.on('disconnect',()=>
-    // {
-    //     removeUser(socket.id);
-    //     console.log("user disconnected",socket.id);
-    //     console.log(roomUser);
-    //     io.sockets.emit("playerdet",roomUser.length);
-    // });
+    socket.on('disconnect',()=>
+    {
+        
+        removeUser(socket.id);
+        console.log("user disconnected",socket.id);
+        console.log(roomUser);
+        io.sockets.emit("playerdet",roomUser.length);
+    });
 
 });

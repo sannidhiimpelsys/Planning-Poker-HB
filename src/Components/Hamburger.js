@@ -11,7 +11,7 @@ background: #EFFFFA;
 transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
 height: 100vh;
 text-align: left;
-
+margin-left:900px;
 position: absolute;
 
 top: 0;
@@ -35,7 +35,7 @@ transition: transform 0.3s ease-in-out;
 
 const Menu = ({ open, setMessage, room, name, sendMessage, message, messages}) => {
   return (
-    <div className="Hide">
+    <div className={open ? "Hide" : "NotHide"}>
     <StyledMenu open={open}>
      <Chat  setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} />
     </StyledMenu>

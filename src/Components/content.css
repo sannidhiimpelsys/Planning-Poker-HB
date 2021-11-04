@@ -57,8 +57,8 @@
       float: right;
       display: flex;
       flex-direction: column ;   
-      /* margin-top: -120px; */
-       height:282.28px; 
+      margin-top: -20px;
+       /* height:321.28px;  */
       z-index: 900;
   }
 
@@ -66,15 +66,10 @@
  #loginHead {
      font-family: Montserrat;
      font-size : 26px;
-     margin-bottom: 8px;
      color:#C10E21;
-     width: 300px;
-   
-     margin-top: 26.74px;
+     margin-top: 27.64px;
      font-weight: 1000;
      margin-left: 27px;
-     
-
  }
   
  
@@ -87,8 +82,7 @@
       border-radius: 21px;
       font-family: Montserrat;
       margin-left:288px;  
-      margin-bottom: 40px;
-      opacity: 1;
+      margin-bottom: 26.64px !important;
   }
   
   .mainContent{
@@ -100,7 +94,7 @@
   .cards{
       width: 467.71px;
       display: flex;
-      margin-top: -150px; 
+      margin-top: -180px; 
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
@@ -112,7 +106,7 @@
 .cardT{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 29.31px;
+    margin-bottom: 56.31px;
 
 }
 .cardB{
@@ -132,12 +126,12 @@
 }
 
 .Input1{
-    margin-bottom: 26px !important;
+    margin-bottom: 18px !important;
     margin-top : 16px !important;
     padding:10px;
 }
 .Input2{
-    margin-bottom: 21px !important;
+    margin-bottom: 20px !important;
     padding:10px;
 }
 
@@ -154,9 +148,13 @@
     height: 218px;
     margin-right: 20px;
     margin-left: 20px;
+    margin-bottom: 40px;
 }
 
 #selectOpt{
     margin-left : 27px;
-    width: 150px !important;
+    width: 408px !important;
+    height:40px !important;
+    padding:10px;
+    margin-bottom: 30px;
 }

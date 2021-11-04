@@ -23,15 +23,16 @@ const StoryDescription = (props) => {
 
   return (
             <div className="story" >
-              <h1 className="story-dis" >Story Description</h1>
+             {/* <h1 className="story-dis" >Story Description</h1>*/}
               <form className="form-story">
               <textarea className="textArea"
+              rows="5"
               placeholder="   Brief Your Story"
               value={stor}
               onChange={({ target: { value } }) => setStor(value)}
               onKeyPress={event => event.key === 'Enter' ? sendStory(event) : null}
               ></textarea>
-              <button className="send" onClick={e => sendStory(e)}>Send</button>
+              <button className="sendButtons" onClick={e => sendStory(e)}>Send</button>
               </form>
             </div>
 
@@ -39,4 +40,3 @@ const StoryDescription = (props) => {
 };
 
 export default StoryDescription;
-

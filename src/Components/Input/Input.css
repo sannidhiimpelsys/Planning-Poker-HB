@@ -12,6 +12,7 @@
     height: 76px !important;
     font-size: 12pt;
     border: none;
+    resize: none;
     
    
   }
@@ -22,6 +23,7 @@
     opacity: 1;
     border: 1px solid #E3E3E3;
     margin: 5px;
+    resize: none;
   }
   
   .chatButton{

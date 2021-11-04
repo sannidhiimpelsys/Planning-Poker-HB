@@ -49,7 +49,7 @@ code {
   }
  
   .cards{
-    margin-top:20px !important;
+    margin-top:30px !important;
     margin-bottom: 30px;
     float: left;
   }
@@ -81,8 +81,107 @@ code {
  
 }
 
+@media screen and (max-width: 768px)
+{
+  
+  .Cards{
+    display: flex;
+    height: 30% ;
+    width:100%;
+    flex-wrap:wrap;
+    flex-direction: column;
+    z-index: 1 !important;
+  }
+  .Hide{
+    z-index:2 !important;
+  }
+  .cardK{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+   
+    
+  }
+
+}
+
+.head2{
+  display: flex ;
+  flex-direction: row;
+  padding: 0px;
+}
+
+@media screen and (max-width: 712px)
+{
+ 
+  .storyDes{
+    margin-left: 30px;
+      margin-bottom: 30px;
+    
+  }
+  .Cards{
+    position: inherit !important;
+    transform: none !important;
+    max-width: 500px !important;
+  }
+  .Root{
+    width: 100% !important;
+  }
+  
+  .Blur{
+    display:flex;
+    flex-direction: column;
+  }
+  .Title{
+    flex-direction: column;
+    align-items:center
+  }
+  .User{
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+    display: flex;
+    
+    margin-top: 30px;
+  }
+  .UserName{
+    margin-top:10px !important;
+  }
+  .invitebutton{
+    margin-top: 0px !important;
+  }
+  .head2{
+    flex-direction: column !important;
+  }
+  .Share{
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+  }
+  .story{
+    justify-content:flex-start !important;
+    
+  }
+  .textArea{
+    width:300px !important;
+  }
+}
+
 /* Media query for below  550 fixed*/
 @media screen and (max-width:550px){
+  .Cards{
+    position: inherit !important;
+    transform: none !important;
+    max-width: 300px !important;
+  }
+  .storyDes{
+    margin-bottom: 30px;
+  }
+  .Random-img{
+    width: 300px;
+  }
+  .postionings{
+    margin-left: 0 !important;
+  }
   .Root{
     width: 200%;
   }
@@ -99,4 +198,17 @@ code {
   .title{
     margin-top: 10px;
   }
+
+  
+  .Cards{
+    display: block;
+    flex-direction: column;
+  }
+  .cardK{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
 }

@@ -1,47 +1,44 @@
 * {
-    box-sizing: border-box;
-    margin: 0px;
-    
+  box-sizing: border-box;
+  margin: 0px;
+}
+.outerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px;
+  background-color: white;
+  width: 341px;
+  float: right;
+  overflow: visible;
+  padding: 4px;
+  height: 100vh;
+  margin-bottom: -140px;
+  z-index: 900;
+}
+
+.ChatInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 900;
+  border-radius: 8px;
+  height: 100%;
+  padding: 0px !important;
+  background-color: white;
+}
+@media (min-width: 400px) and (max-width: 589px) {
+  .container {
+    height: 65%;
   }
-  .outerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -150px;
-    background-color: white;
-    width: 341px;
-    float:right;
-    overflow:visible;
-    padding-right: 14px;
-    height: 100vh;
-    margin-right: 10px;
-    
-    margin-bottom: -140px;
-    z-index: 900;
+}
+@media (min-width: 360px) and (max-width: 399px) {
+  .container {
+    height: 80%;
   }
- 
-  .ChatInner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 900;
-    border-radius: 8px;
-    height: 100%;
-   padding: 0px !important;
-    background-color: white;
-  }
-  @media (min-width: 400px) and (max-width: 589px) {
-    .container {
-      height: 65%;
-    }
-  }
-  @media (min-width: 360px) and (max-width: 399px) {
-    .container {
-      height: 80%;
-    }
-  }
-  
-  /* #ChatsIn{
+}
+
+/* #ChatsIn{
     position: absolute;
     right: -900px;
     -webkit-animation: slide 0.5s forwards;
@@ -73,10 +70,6 @@
 @keyframes slideout {
   100% { right: -900; }
 } */
-
-
-
-
 
 /* .overlay{
   height: 100%;

@@ -44,6 +44,7 @@ header{
     margin-bottom: 10px;
     left:50%;
     transform: translateX(-50%);
+    z-index: -1;
 }
     
 
@@ -66,3 +67,25 @@ header{
     height:100vh;
     margin: -100vh; */
 }
+
+
+.User{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+}
+
+.UserName{
+    font-family:Montserrat;
+    font-size: 16px;
+    color:  black;
+    margin-top: -10px;
+    margin-right: 30px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+

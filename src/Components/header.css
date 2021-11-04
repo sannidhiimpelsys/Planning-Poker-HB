@@ -30,9 +30,9 @@
   }
 
   .Random-img{
-    width:180.8px;
-    height:78.05px;
-    margin-top:34.8px;
+   /* width:180.8px;
+    height:100px;*/
+    margin-top:25px;
   }
 
   .Random-imgs{
@@ -40,3 +40,7 @@
     margin-top:25px;
   }
   
+ .postionings{
+  margin-left: 30px;
+  
+ }
