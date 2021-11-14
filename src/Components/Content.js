@@ -11,21 +11,98 @@ import Card7 from '../assets/Cards/Vertical/Group 31141.svg'
 import Card8 from '../assets/Cards/Vertical/Group 28237.svg'
 import Card9 from '../assets/Cards/Vertical/Group 7422.svg' 
 import Card10 from '../assets/Cards/Vertical/Group 21173.svg'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 
+// import $ from 'jquery';
+import CreatableSelect from "react-select/creatable";
 // Title
 
 import planningTitle from '../assets/Title/Group 58173.svg' 
 import '../Components/content.css'
 
-
+const options = [
+   { value: ["0","1","2","3","5","7","13","?"], label: "Fibb [0,1,2,3,5,7,13,?]" },
+   { value: ["0","1","2","3","5","7","13","?"], label: "Modified Fibb [0,0.5,2,3,5,8,13,?]" },
+  
+ ];
 const  Content= () => {
       const [name, setName] = useState('');
       const [room, setRoom] = useState('');
       const [cardVal, setCardVal] = useState('');
-   
+      
+    const [patternValue, setPatternValue] = useState()
+    const handleChange = (field, value) => {
+      switch (field) {
+        case 'roles':
+          setPatternValue(value);
+         for(var i in value){
+            if(i==="value"){
+               setCardVal(value[i])
+            }
+         }
+         setTimeout(() => {
+            console.log(patternValue);
+          console.log(cardVal);
+         }, 2000);
+          
+          break
+  
+        default:
+          break
+      }
+    }
+    const handleClick =( value) =>{    
+           setPatternValue(value);
+           setTimeout(() => {
+            console.log(patternValue);
+          console.log(cardVal);
+         }, 2000);
+           
+       }
+       const customStyles = {
+         option: (provided, state) => ({
+            ...provided,
+            borderBottom: '1px dotted pink',
+            color: state.isSelected ? 'red' : 'blue',
+            padding: 5
+          }),
+          container: provided => ({
+            ...provided,
+            width: 100+'%',
+            display:'flex'
+          }),
+          control: provided => ({
+            ...provided,
+            width: 100+'%',
+            height:40+'px'
+          }),
+          valueContainer: provided => ({
+            ...provided,
+            padding:0+'px',
+            height:40+'px important'
+          }),
+          indicatorSeparator: provided => ({
+            ...provided,
+            display:'none'
+          }),
+          indicatorsContainer: provided => ({
+            ...provided,
+            height:40+'px'
+          }),
+          input: provided => ({
+            ...provided,
+            margin:0+'px',
+            padding:0+'px'
+          }),
+          placeholder: provided => ({
+            ...provided,
+            marginLeft:10+'px',
+            color:'#495057ad'
+          })
+       }
     return (
+       
          <div className="content" id ="contents"> 
                <div className="title ">
                   <div className="postioning">
@@ -46,30 +123,34 @@ const  Content= () => {
                      <img src={Card8} className="cardV" alt="poker card 5"  />
                   </div>
                   <div id='loginDivBlock' className="Login">
-                     <form action="form.html" method="post" >
+                     <form className="d-flex flex-column p-2" action="form.html" method="post" >
                         <p aria-label="Create a room" id = "loginHead"> CREATE/JOIN </p>
-                        <input className="Input1" type="text" aria-label="Enter User ID" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
-                        <input className="Input2"type="text" aria-label="Enter Room ID" placeholder="Room ID" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
+                        <input className="Input1 form-control" type="text" aria-label="Enter User ID" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
+                        <input className="Input2 form-control"type="text" aria-label="Enter Room ID" placeholder="Room ID" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
                        
-                       <select defaultValue id='selectOpt' className="form-control w-75 opt" name="" required onClick={(event) => {
-                         
+                       {/* <select defaultValue id='selectOpt' className=" opt" name="" required onClick={(event) => {
                           setCardVal(event.target.value)}} >
                            <option value='' >Select</option>
                            <option value={["0","1","2","3","5","7","13","?"]}>Fibb [0,1,2,3,5,7,13,?]</option>
-                           <option value={["0","1/2","2","3","5","8","13","?"]}>Modified Fibb [0,1,2,3,5,8,13,?]</option>
-                       </select>
-                       {/* <div class="dropdown">
-                          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
-                           </a>
-
-                           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                           <a class="dropdown-item" href="#">Action</a>
-                           <a class="dropdown-item" href="#">Another action</a>
-                           <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                        </div> */}
-                        <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/poker?name=${name}&room=${room}&cardVale=${cardVal}`}>
+                           <option value={["0","0.5","2","3","5","8","13","?"]}>Modified Fibb [0,0.5,2,3,5,8,13,?]</option>  
+                           
+                       </select> */}
+                       
+                        <div className="selectCreate">
+                              <CreatableSelect
+                              styles={customStyles}
+                              isClearable
+                              onChange={(value) => handleChange('roles', value)}
+                              value={patternValue}
+                              options={options}
+                              onClick={(event) => {
+                                 handleClick(event.target.value); event.preventDefault()}}   
+                                 />
+                           </div>
+                       
+                       {/* <CustomSelect /> */}
+                       {/* <input type="text" onChange={(event) =>setInputVal(event.target.value)}/> */}
+                        <Link className="atag" onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/poker?name=${name}&room=${room}&cardVale=${cardVal}`}>
                         <button type="submit" className="loginButton" >Enter</button>
                         </Link>
                      </form>
@@ -89,7 +170,7 @@ const  Content= () => {
 
       </div>
           
-   
+      
       );
 }
  

@@ -2,12 +2,11 @@
   display: flex;
 
   justify-content: space-between;
-
-  border-radius: 4px 4px 0 0;
-  height: 53px;
-
-  margin-top: 18px;
-  margin-left: 13px;
+  margin-left: 2px;
+  width: 100%;
+  position: fixed;
+  top:0;
+  background-color: white;
 }
 .icon {
   font-size: 20px;
@@ -15,18 +14,22 @@
 
 .leftInnerContainer {
   display: flex;
-  margin-top: 60px;
+  width: 100%;
+  margin-top: 20px;
   color: rgb(0, 0, 0);
-  align-items: flex-end;
+  
   size: 18px;
+  
 }
 .textMes {
+  
   font-size: 18px;
   font-family: Montserrat;
   font-weight: bold;
   letter-spacing: 0px;
   color: #343a40;
   opacity: 1;
+  padding-left: 16.75px;
 }
 
 .rightInnerContainer {

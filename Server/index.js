@@ -87,6 +87,13 @@ io.on("connection",function(socket){
         }
     })
 
+    socket.on('getusers',({name,room}, callback)=>
+    {
+        const user = getUser(socket.id);
+        io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
+        callback();
+    });
+
     socket.on('disconnect',()=>
     {
         
@@ -95,5 +102,5 @@ io.on("connection",function(socket){
         console.log(roomUser);
         io.sockets.emit("playerdet",roomUser.length);
     });
-
+    
 });

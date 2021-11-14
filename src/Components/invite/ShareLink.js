@@ -4,6 +4,8 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { useState, useEffect } from "react";
 import "./Sharelink.css";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 
 function ShareLink() {
   /* const prom = new Promise();*/
@@ -11,7 +13,7 @@ function ShareLink() {
     const myURL = new URL(window.location.href);
     console.log(myURL.searchParams.get("name"));
   }, 2000);*/
-
+  const [copied, setCopied] =useState(false);
   const [k, sk] = useState("");
   useEffect(() => {
     /*var myURL = window.location.href;
@@ -32,15 +34,16 @@ function ShareLink() {
     left: 150,
     top: 50,
   };*/
+ 
   return (
     <div className="Share">
-      
-      <Popup
-        trigger={<button className="invitebutton"> Invite Link</button>}
-        /* offset={offset}*/
-      >
-        <div className="pop">{k}</div>
-      </Popup>
+        <Popup
+          trigger={<button className="btn invitebutton"> Invite Link</button>}>     
+      <CopyToClipboard text={k} onCopy={() => setCopied(true)}>
+            <div className="pop"  >{k}</div>
+      </CopyToClipboard>
+      {copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+        </Popup>
     </div>
   );
 }

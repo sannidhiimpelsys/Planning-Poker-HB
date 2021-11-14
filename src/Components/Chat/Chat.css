@@ -6,15 +6,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -150px;
+  margin-top: -110px;
   background-color: white;
   width: 341px;
   float: right;
   overflow: visible;
-  padding: 4px;
-  height: 100vh;
+  padding: 3px;
+  height: 90vh;
   margin-bottom: -140px;
-  z-index: 900;
+  z-index: 90;
+  margin-right: 7px;
 }
 
 .ChatInner {

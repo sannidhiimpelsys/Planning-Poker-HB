@@ -3,6 +3,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin-right: 11px;
     
   }
   
@@ -22,7 +23,6 @@
     box-shadow: inset 0px 0px 6px #00000029;
     opacity: 1;
     border: 1px solid #E3E3E3;
-    margin: 5px;
     resize: none;
   }
   

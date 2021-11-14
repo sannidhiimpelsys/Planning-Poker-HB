@@ -32,7 +32,7 @@ const StoryDescription = (props) => {
               onChange={({ target: { value } }) => setStor(value)}
               onKeyPress={event => event.key === 'Enter' ? sendStory(event) : null}
               ></textarea>
-              <button className="sendButtons" onClick={e => sendStory(e)}>Send</button>
+              <button className="btn sendButtons" onClick={e => sendStory(e)}>Send</button>
               </form>
             </div>
 

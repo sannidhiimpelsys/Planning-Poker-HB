@@ -7,8 +7,28 @@
   *, *::after, *::before {
     box-sizing: border-box;
   }
+.Hamburgericon{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+}
+.insideicon{
+  position: fixed;
+  top: 0;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 80%;
 
-
+}
+.buttonburger{
+  border:none;
+}
+.buttonburgermessage{
+  border:none;
+  background-color: white;
+}
   .Hide
   {
     overflow-x: hidden;
@@ -17,17 +37,17 @@
     position: fixed;
     right: 0;
     top:0;
-   
+    background-color: white;
   }
   .NotHide
   {
     overflow-x: hidden;
-    width: 355px;
+    /* width: 355px; */
     height: 100%;
     position: fixed;
     right: 0;
     top:0;
-   z-index: -1;
+   z-index: -300 !important;
   }
  /*  body {
     display: flex;

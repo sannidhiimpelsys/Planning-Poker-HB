@@ -1,11 +1,13 @@
 import './Table.css'
-const Placedcard = ({ value}) => {
-
+const Placedcard = ({ value, user}) => {
+  
     return (
       
         <div className="placedcard">
-        <span className="value">{value}</span>
-       
+        <div className="value">{value}</div>
+        <div className="user-name">
+        {user.name}
+        </div>
       </div>
       
     );

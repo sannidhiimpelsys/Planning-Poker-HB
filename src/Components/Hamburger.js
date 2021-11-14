@@ -2,6 +2,7 @@ import "./Hamburger.css"
 import React from "react";
 import styled from 'styled-components';
 import Chat from '../Components/Chat/Chat';
+import InfoBar from "../Components/InfoBar/InfoBar";
 
 const StyledMenu = styled.nav`
 display: flex;
@@ -33,11 +34,19 @@ transition: transform 0.3s ease-in-out;
 }
 `
 
-const Menu = ({ open, setMessage, room, name, sendMessage, message, messages}) => {
+const Menu = ({ open, setMessage, room, name, sendMessage, message, messages, setOpen}) => {
   return (
     <div className={open ? "Hide" : "NotHide"}>
+      
     <StyledMenu open={open}>
+      <InfoBar room={room} />
+      <div className="insideicon">
+    <StyledBurger className="buttonburgermessage" open={open} onClick={() => setOpen(!open)}>
+        <div className="fa fa-close" style={{fontSize:'20px',zIndex:300, color:"#C10E21"}}></div>
+    </StyledBurger>
+    </div>
      <Chat  setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} />
+     
     </StyledMenu>
     </div>
   )
@@ -45,71 +54,48 @@ const Menu = ({ open, setMessage, room, name, sendMessage, message, messages}) =
 
 
 const StyledBurger = styled.button`
-position: absolute;
-top: 5%;
-right: 2rem;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-width: 2rem;
-height: 2.5rem;
-border: 4px solid #C10E21;
-border-radius: 5px;
-cursor: pointer;
-padding: 0;
-z-index: 10;
+width:50px;
+height:50px;
+z-index: 80;
+margin:5px;
 
-&:focus {
-  outline: none;
+border-radius: 80%;
+.center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 50%;
+  height: 50%;
+ 
+ 
 }
-.burger.part3{
-  width:40% ;
-}
-.burger {
-  width: 1rem;
-  height: 0.25rem;
-  background: ${({ open }) => open ? '#C10E21' : '#C10E21'};
-  border-radius: 10px;
-  transition: all 0.3s linear;
-  position: relative;
-  transform-origin: 1px;
 
-  :first-child {
-    transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-    width: ${({ open }) => open ? '120%': '80%'};
-    margin-left:8%;
-    margin-top:10%;
-  }
-
-  :nth-child(2) {
-    opacity: ${({ open }) => open ? '0' : '1'};
-    transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
-    width: 80%;
-    margin-left:8%;
-  }
-
-  :nth-child(3) {
-    transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-    width: ${({ open }) => open ? '120%': '40%'} !important;
-    background: ${({ open }) => open ? '#C10E21': '#C10E21'};
-    
-    margin-left:8%;
-    margin-bottom:10%;
-   
-
-  }
+.notification.icon {
   
+  background-color: #D54634;
+  border: 4px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  z-index:30;
 }
+.iconsz{
+  font-size:20px;
+ 
+}
+
 `
 
 const Burger = ({ open, setOpen }) => {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div className="burger"/>
-      <div className="burger"/>
-      <div className="burger part3"/>
-     
+    
+    <StyledBurger className="buttonburger" open={open} onClick={() => setOpen(!open)}>
+      <div className="center notification icon">
+        <div className="fa fa-envelope iconsz" style={{fontSize:20+'px',color:"white"}}></div>
+    </div> 
     </StyledBurger>
+    
+   
   )
 }
 
