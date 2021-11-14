@@ -162,7 +162,18 @@ justify-content: center;
     align-items:center;
 }
 
-
+.connect{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+}
+.disconnect{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+}
 .connect button{
     background-color: greenyellow;
     position: fixed;
