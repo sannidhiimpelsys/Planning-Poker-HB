@@ -3,7 +3,8 @@ import React from 'react'
 function Cofee({onClick}) {
     return (
         <div>
-            <button onClick={onClick}>cofee</button>
+            
+            <button  aria-label="Coffee Break "  className="Coffee-button" onClick={onClick}> <i className="fa fa-coffee" aria-hidden="true"></i></button>
         </div>
     )
 }

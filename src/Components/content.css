@@ -11,6 +11,26 @@
     margin-top:110px ;
 
 }
+.atag:focus{
+    outline: none!important;
+    box-shadow: none !important;
+}
+#react-select-3-placeholder{
+    background-color: white;
+}
+#react-select-3-input:focus{
+   outline: none !important;
+    box-shadow: none !important;
+}
+div.selectCreate:focus{
+    outline: 2px solid #E17509 !important;
+  box-shadow: 0 0 4px 4px #E17509 !important;
+}
+div.selectCreate{
+    outline: none !important;
+    box-shadow: none!important;
+}
+
 .content{
     display: flex;
     flex-wrap: wrap;
@@ -84,6 +104,7 @@
       margin-left:288px;  
       margin-bottom: 26.64px !important;
       margin-top: 10px;
+      border: none;
   }
   
   .mainContent{
@@ -160,13 +181,22 @@
     padding:10px;
     margin-bottom: 30px;
 }
-
+.atag{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: auto;
+    text-decoration: none;
+}
+.atag:hover{
+    text-decoration: none;
+}
 .selectCreate{
  width: 90%;
  align-self: center;
  justify-content: center;
  align-items: center;
- padding: auto;
+ /* padding: auto; */
  height: 40px !important;
  display: flex;
  padding: 0 !important;

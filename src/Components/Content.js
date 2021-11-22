@@ -61,24 +61,30 @@ const  Content= () => {
            
        }
        const customStyles = {
-         option: (provided, state) => ({
-            ...provided,
-            borderBottom: '1px dotted pink',
-            color: state.isSelected ? 'red' : 'blue',
-            padding: 5
-          }),
+         
           container: provided => ({
             ...provided,
+            '&:focus': { outline: 2+'px solid #E17509 !important',  boxShadow: '0 0 4px 4px #E17509 !important'},
             width: 100+'%',
             display:'flex'
           }),
-          control: provided => ({
+          control: (provided,state) => ({
             ...provided,
+            '&:focus': { border: 2+'px solid #E17509 !important', outline: 2+'px solid #E17509 !important',  boxShadow: '0 0 4px 4px #E17509 !important'},
             width: 100+'%',
-            height:40+'px'
+            height:40+'px',
+            border: state.isFocused && 2+'px solid #E17509 !important',
+            boxShadow: state.isFocused && '0 0 4px 4px #E17509 !important'
+          }),
+          singleValue: provided => ({
+            ...provided,
+            color:'#495057 !important',
+            paddingInline:10+'px',
+            height:40+'px important'
           }),
           valueContainer: provided => ({
             ...provided,
+            
             padding:0+'px',
             height:40+'px important'
           }),
@@ -93,7 +99,8 @@ const  Content= () => {
           input: provided => ({
             ...provided,
             margin:0+'px',
-            padding:0+'px'
+            padding:0+'px',
+            paddingLeft:10+'px'
           }),
           placeholder: provided => ({
             ...provided,
@@ -113,31 +120,24 @@ const  Content= () => {
                {/* Cards here */}
                <div className="cards ">
                   <div id="cardHorizontal " className="CardH cardT">
-                     <img src={Card1} alt="poker card 1" />
-                     <img src={Card2}  alt="poker card 2"  />
-                     <img src={Card3}  alt="poker card 3" />  
+                     <img src={Card1} alt="" />
+                     <img src={Card2}  alt=""  />
+                     <img src={Card3}  alt="" />  
                   </div>
                   <div className="outerLogin">
                   <div id="cardVertical" >
-                     <img src={Card7} className="cardV" alt="poker card 4" />
-                     <img src={Card8} className="cardV" alt="poker card 5"  />
+                     <img src={Card7} className="cardV" alt="" />
+                     <img src={Card8} className="cardV" alt=""  />
                   </div>
                   <div id='loginDivBlock' className="Login">
                      <form className="d-flex flex-column p-2" action="form.html" method="post" >
                         <p aria-label="Create a room" id = "loginHead"> CREATE/JOIN </p>
-                        <input className="Input1 form-control" type="text" aria-label="Enter User ID" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
+                         <input className="Input1 form-control" type="text" aria-label="Enter User ID" placeholder="User ID" name="uname" required onChange={(event) =>setName(event.target.value)}/>
                         <input className="Input2 form-control"type="text" aria-label="Enter Room ID" placeholder="Room ID" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
-                       
-                       {/* <select defaultValue id='selectOpt' className=" opt" name="" required onClick={(event) => {
-                          setCardVal(event.target.value)}} >
-                           <option value='' >Select</option>
-                           <option value={["0","1","2","3","5","7","13","?"]}>Fibb [0,1,2,3,5,7,13,?]</option>
-                           <option value={["0","0.5","2","3","5","8","13","?"]}>Modified Fibb [0,0.5,2,3,5,8,13,?]</option>  
-                           
-                       </select> */}
-                       
-                        <div className="selectCreate">
-                              <CreatableSelect
+
+                        <label htmlFor="react-select-3-input" className="sr-only">Select your Pattern</label>
+                        <div className="selectCreate" >
+                              <CreatableSelect 
                               styles={customStyles}
                               isClearable
                               onChange={(value) => handleChange('roles', value)}
@@ -148,23 +148,22 @@ const  Content= () => {
                                  />
                            </div>
                        
-                       {/* <CustomSelect /> */}
-                       {/* <input type="text" onChange={(event) =>setInputVal(event.target.value)}/> */}
+                      
                         <Link className="atag" onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/poker?name=${name}&room=${room}&cardVale=${cardVal}`}>
-                        <button type="submit" className="loginButton" >Enter</button>
+                        <button type="submit" className="loginButton" aria-label="Submit">Enter</button>
                         </Link>
                      </form>
                     
                   </div>
                   <div id="cardVertical" >
-                     <img src={Card9} className="cardV"alt="poker card 6" />
-                     <img src={Card10} className="cardV" alt="poker card 7"  />
+                     <img src={Card9} className="cardV"alt="" />
+                     <img src={Card10} className="cardV" alt=""  />
                   </div>
                   </div>
                   <div id="cardHorizontal " className="CardH cardB">
-                     <img src={Card4} alt="poker card 8"   />
-                     <img src={Card5} alt="poker card 9" />
-                     <img src={Card6} alt="poker card 10"  />  
+                     <img src={Card4} alt=""   />
+                     <img src={Card5} alt="" />
+                     <img src={Card6} alt=""  />  
                   </div>
                </div>
 

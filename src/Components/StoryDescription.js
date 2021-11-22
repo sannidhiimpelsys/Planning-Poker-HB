@@ -27,7 +27,7 @@ const StoryDescription = (props) => {
               <form className="form-story">
               <textarea className="textArea"
               rows="5"
-              placeholder="   Brief Your Story"
+              placeholder="Brief Your Story"
               value={stor}
               onChange={({ target: { value } }) => setStor(value)}
               onKeyPress={event => event.key === 'Enter' ? sendStory(event) : null}

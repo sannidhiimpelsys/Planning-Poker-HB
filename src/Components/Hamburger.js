@@ -8,7 +8,7 @@ const StyledMenu = styled.nav`
 display: flex;
 flex-direction: column;
 justify-content: center;
-background: #EFFFFA;
+background: white;
 transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
 height: 100vh;
 text-align: left;
@@ -41,8 +41,9 @@ const Menu = ({ open, setMessage, room, name, sendMessage, message, messages, se
     <StyledMenu open={open}>
       <InfoBar room={room} />
       <div className="insideicon">
-    <StyledBurger className="buttonburgermessage" open={open} onClick={() => setOpen(!open)}>
-        <div className="fa fa-close" style={{fontSize:'20px',zIndex:300, color:"#C10E21"}}></div>
+    <label htmlFor="Closeicon"  className="sr-only" >Close Messages</label>
+    <StyledBurger aria-label="Close Message" id="Closeicon" className="buttonburgermessage" open={open} onClick={() => setOpen(!open)}>
+        <span  className="fa fa-close" style={{fontSize:'20px',zIndex:300, color:"#C10E21"}}></span>
     </StyledBurger>
     </div>
      <Chat  setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} />
@@ -88,11 +89,12 @@ border-radius: 80%;
 
 const Burger = ({ open, setOpen }) => {
   return (
-    
-    <StyledBurger className="buttonburger" open={open} onClick={() => setOpen(!open)}>
-      <div className="center notification icon">
-        <div className="fa fa-envelope iconsz" style={{fontSize:20+'px',color:"white"}}></div>
-    </div> 
+
+    <StyledBurger aria-label="Message" id="Messageicon" className="buttonburger" open={open} onClick={() => setOpen(!open)}>
+     
+      <span  className="center notification icon">
+        <span  className="fa fa-envelope iconsz" style={{fontSize:20+'px',color:"white"}}></span>
+    </span> 
     </StyledBurger>
     
    
@@ -113,6 +115,7 @@ const Hamburger = (props) => {
     <div>
 
       <div ref={node}>
+      <label htmlFor="Messageicon"  className="sr-only" >Message</label>
         <Burger open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages}/>
       </div>

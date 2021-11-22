@@ -1,7 +1,13 @@
+
 *{
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+}
+
+a:focus, input:focus, button:focus, select:focus, textarea:focus {
+  outline: 2px solid #E17509 !important;
+  box-shadow: 0 0 4px 4px #E17509 !important;
 }
 div.off#name{
   display: none;
@@ -15,10 +21,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* .inputDiv{
+  margin-left:16.75px  !important;
+  margin-right:16.75px  !important;
+  }
+
+  button.chatButton{
+    margin-right:16.75px  !important;
+  } */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 
+}
+.visuallyhidden {
+  position: absolute;
+  left: 0;
+  top: -500px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .cardK{
@@ -27,9 +50,40 @@ code {
   justify-content: center;
   flex-wrap: wrap;
 }
+.notBlur{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-
-
+}
+.main-content{
+ display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.storyDes{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  flex-grow: 1;
+  padding-bottom: 20px;
+}
+.Jira-button{
+    border-radius: 8px;
+    padding-inline: 20px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    font: normal normal bold 16px Montserrat;
+    letter-spacing: 0px;
+    opacity: 1;
+    /* border: 1px solid #c10e21; */
+    background-color: #c10e21;
+    font-size: 16px;
+    color: white
+}
 @media screen and (max-width:992px){
 .outerLogin{
   max-width: 467.71px;
@@ -88,7 +142,7 @@ div.selectCreate{
 
   p#loginHead,input.Input1,input.Input2,select#selectOpt.opt{
     margin:10px 0 10px 0 !important;
-    padding:5px;
+    
     font-size: 18px;
     
   }
@@ -105,8 +159,12 @@ div.selectCreate{
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    padding-right: 20px;
+    text-decoration: none;
     width: 100%;
+    border: none;
+  }
+  .atag:hover{
+    text-decoration: none;
   }
   input[type=text].Input1{
     width:100%;
@@ -138,6 +196,63 @@ div.selectCreate{
 }
 
 }
+@media screen and (min-width: 993px) and (max-width: 1050px){
+  div.postioning{
+    margin-left: 31px;
+  }
+  
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  #loginDivBlock{
+    padding-inline:30px ;
+  }
+  div.site-logo{
+    margin: 0;
+    padding-inline:30px ;
+  }
+  .main-content{
+    margin: 0;
+    padding-inline:30px ;
+  }
+}
+  @media screen and (min-width: 551px) and (max-width: 767px){
+    #loginDivBlock{
+      padding-inline:20px ;
+    }
+    div.site-logo{
+      margin: 0;
+      padding-inline:20px ;
+    }
+    .main-content{
+      margin: 0;
+      padding-inline:20px ;
+    }
+  }
+    @media screen and (min-width: 320px) and (max-width: 550px){
+      #loginDivBlock{
+        padding-inline:15px ;
+      }
+      div.site-logo{
+        margin: 0;
+        padding-inline:15px ;
+      }
+      .main-content{
+        margin: 0;
+        padding-inline:15px ;
+      }
+      div.Cards{
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        width:172px;
+      }
+      button.cardBox{
+        width:67px;
+        height: 106px;
+      }
+    }
+
 @media screen and (max-width: 1332px)
 {
   .CardH, .cardV, #cardVertical{
@@ -230,11 +345,7 @@ div.selectCreate{
 @media screen and (max-width: 712px)
 {
  
-  .storyDes{
-    margin-left: 30px;
-
-    
-  }
+  
   .Cards{
    
     /* max-width: 500px !important; */
@@ -288,17 +399,21 @@ div.selectCreate{
     align-self: center;
   }
   .storyDes{
-   
-    margin-left: 10px;
+   margin-right: 15px;
+    margin-left: 15px;
   }
-  .Random-img{
-    width: 300px;
+  img.Random-img{
+    width: 230px;
+    margin-top: 0;
   }
   .postionings{
     margin-left: 0 !important;
     padding-left: 0!important;
   }
-  
+  div.Jira-link{
+    width:auto;
+    max-width: 300px;
+  }
 .ChatInner{
   height: 100% !important;
 }
@@ -322,13 +437,14 @@ div.selectCreate{
    
     overflow-x: scroll;
     padding: 20px;
+    margin-bottom: 30px;
     
   }
   .cardK{
     display: flex;
     flex-wrap:nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
 }

@@ -9,7 +9,7 @@ const Input = ({ setMessage, sendMessage, message }) => (
     <div className='inputDiv' >
       <textarea
       id="inputs"
-      type="text"
+      
       placeholder="Type a message..."
       value={message}
       onChange={({ target: { value } }) => setMessage(value)}
@@ -19,8 +19,8 @@ const Input = ({ setMessage, sendMessage, message }) => (
     />
     </div>
     <div>
-    <button className="chatButton" onClick={(e) => sendMessage(e)}>
-      Enter
+    <button className="btn chatButton" onClick={(e) => sendMessage(e)}>
+      Send
     </button>
     </div>
    

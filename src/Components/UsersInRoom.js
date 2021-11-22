@@ -1,6 +1,6 @@
 
 // import onlineIcon from '../../icons/onlineIcon.png';
-import ScrollToBottom from 'react-scroll-to-bottom';
+
 import './UsersInRoom.css'
 const UsersInRoom = ({ users, onClick }) => {
    
@@ -14,18 +14,16 @@ const UsersInRoom = ({ users, onClick }) => {
                 users
                     ? (
                         <div className="HeightD">
-                        <div className="dropdown-item">
-                            <ScrollToBottom className="items">
-                                <div>
+                       
+                           
                             {users.map(({name}) => (
-                                <div key={name} className="namesx d-flex">
+                                <div key={name} className="dropdown-item namesx ">
                                     {name}
                                </div>
                                 ))}
-                                </div>
-                        </ScrollToBottom>
+                               
                         </div>
-                        </div>
+                        
                     )
                     : null
                 }

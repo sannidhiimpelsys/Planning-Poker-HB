@@ -68,10 +68,10 @@ const Poker = () => {
     // setCardVal(...cardVal,cardVal);
 
     socket.emit("join", { name, room, cardVale }, (error) => {
-      if (error) {
-        alert(error);
-        // setBackerror('1');
-      }
+      // if (error) {
+      //   alert(error);
+      //   // setBackerror('1');
+      // }
     });
   }, [socket, location.search]);
   useEffect(() => {}, [socket]);
@@ -170,10 +170,10 @@ const cafe = ()=>{
  else{
   
   socket.emit("join", { name, room, cardVale }, (error) => {
-    if (error) {
-      alert(error);
-      // setBackerror('1');
-    }
+    // if (error) {
+    //   alert(error);
+    //   // setBackerror('1');
+    // }
   });
   socket.open();
   history.push(`/poker?name=${name}&room=${room}&cardVale=${series}`, {
@@ -187,12 +187,12 @@ const cafe = ()=>{
     return (
       <div className={on ? "off" : null} id="name">
         <div className="overlay-name">
-        <form  method="POST" className="noname-form">
+        <div  className="noname-form">
           <input
             type="text"
             name="sda"
             id="asd"
-            placeholder="Enter name"
+            placeholder="Enter your name"
             onChange={(e) => {
               value = e.target.value;
             }}
@@ -205,9 +205,9 @@ const cafe = ()=>{
               handleFlag(value);
             }}
           >
-            Enter
+            Submit
           </button>
-        </form>
+        </div>
         </div>
       </div>
     );
@@ -231,16 +231,30 @@ const cafe = ()=>{
     return( <RemoveLog />);
   }
 const showUsers = () =>{
-
+  
   socket.emit('getusers', { name, room }, (error) => {
-    if(error) {
-      alert(error);
-    }
+    // if(error) {
+    //   alert(error);
+    // }
   });
 
 }
 const [linkChange, setLinkChange] = useState('');
 const [showLinks, setShowLinks] = useState(true);
+const [showJira, setShowJira] = useState(true);
+const sendJira = (event) =>{
+  event.preventDefault();
+  
+  if(linkChange){
+      socket.emit("jira",linkChange)
+  }
+}
+useEffect(()=>{
+  socket.on("jira",(data)=>{
+      setLinkChange(data);
+  })
+},[socket])
+
   return (
     <div
       className={
@@ -250,7 +264,7 @@ const [showLinks, setShowLinks] = useState(true);
       <div className="unBlurred">
         <Status noName={noName} />
       </div>
-      <div className="NavBar">
+      <header className="NavBar">
               <nav className="navbar navbar-expand-lg navbar-light">
               <Logo className="hbLogo" room={room} name={name} />
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -279,16 +293,21 @@ const [showLinks, setShowLinks] = useState(true);
           
         </nav>
        
-      </div>
+      </header>
+      <main className="main-content">
           <div className="Jira-outer-link">
           <div className={showLinks ? "Jira-link": "dispnone"}>
-            <a href={""+linkChange} target="_blank" rel="noopener noreferrer">Jira Link</a>
-            
-            <button className="btn rounded" onClick={()=>setShowLinks(false)}>  <i className="fa fa-pencil" aria-hidden="true"></i></button>
+            <p className={showJira ?"Jira-text":"dispnone" }>Jira Link</p>
+            <a className="Jira-text" href={""+linkChange} target="_blank" rel="noopener noreferrer">
+     
+              <p className="LinkChange">{linkChange}</p>
+              </a>
+            <label htmlFor="Jira-pencil"  className="sr-only" >Jira Link Edit</label>
+            <button aria-label="Jira Link Edit" id="Jira-pencil" className="btn rounded" onClick={()=>setShowLinks(false)}>  <i className="fa fa-pencil" ></i></button>
           </div>
             <div className={showLinks ?"dispnone" : "Jira-link"}>
-              <input type="text" className="Jira-Text"value={linkChange} onChange={({ target: { value } })=>setLinkChange(value)}/>
-              <button className="btn rounded sendButtons" onClick={()=>setShowLinks(true)}>Enter</button>
+              <input type="text" className="Jira-Text" value={linkChange} onChange={({ target: { value } })=>setLinkChange(value)}/>
+              <button className="btn Jira-button" onClick={(event)=>{setShowLinks(true);setShowJira(false); sendJira(event)}}>Enter</button>
             </div>
         </div>
       <div className="storyDes ">
@@ -300,10 +319,12 @@ const [showLinks, setShowLinks] = useState(true);
 
           {flag !== 1 ? (
           <div className="Cards">
-            <div className="cardK">
+            <div className="cardK" role="group"     aria-labelledby="cardgroup">
+              <label id="cardgroup" className="sr-only">Pointer stories</label>
             {hand.map((value, index) => (
               <Card
                 key={value}
+                index={index}
                 value={value}
                 onClick={() => {removeCard(value);showUsers()}}
               />
@@ -325,7 +346,7 @@ const [showLinks, setShowLinks] = useState(true);
             />
           )}       
        
-      <div className="Hamburgericon">
+      <div className="Hamburgericon" >
       <Hamburger
                   chatT={chatT}
                   setMessage={setMessage}
@@ -336,8 +357,8 @@ const [showLinks, setShowLinks] = useState(true);
                   messages={messages}
                 />
       </div>  
+    </main>
     </div>
-    
   );
 };
 

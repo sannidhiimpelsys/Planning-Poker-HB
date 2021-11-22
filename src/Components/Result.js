@@ -10,7 +10,8 @@ const Result = (props) => {
     
     return (
       <div className="result">
-          <p className="outcome">The result is : {Math.ceil(total/count)}</p>
+        <label  className="outcome">The result is {Math.ceil(total/count)}</label>
+          {/* <p id="resultTot" className="outcome">The result is : {Math.ceil(total/count)}</p> */}
           <button className="send" onClick={props.goback}>Go Back</button>
       </div>
     );

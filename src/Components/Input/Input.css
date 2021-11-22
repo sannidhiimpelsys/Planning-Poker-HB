@@ -3,8 +3,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin-right: 11px;
-    
+    padding-inline: 16.75px;
   }
   
   #inputs {
@@ -14,15 +13,15 @@
     font-size: 12pt;
     border: none;
     resize: none;
-    
-   
+    padding: 8px !important;
+
   }
   .inputDiv{
-    padding: 2px;
+    /* padding: 2px; */
     background: #FBFBFB 0% 0% no-repeat padding-box;
-    box-shadow: inset 0px 0px 6px #00000029;
+    
     opacity: 1;
-    border: 1px solid #E3E3E3;
+    border: 2px solid #07040413;
     resize: none;
   }
   
@@ -30,16 +29,21 @@
   background-color: #C10E21;
   font-size: 16px;
   color: white;
-  width: 121px;
+  /* width: 81px; */
   height: 41px;
-  border-radius: 21px;
-  font-family: Montserrat;
-  margin-bottom: 25px;
+  border-radius: 8px;
+  font: normal normal bold 16px Montserrat;
+  padding-inline: 20px;
+ 
   margin-top: 10px;
   float: right;
   opacity: 1;
+  border:none;
 }
-
+.chatButton:hover{
+  background-color: #9D0B1B;
+    color: white;
+}
   input:focus,
   textarea:focus,
   select:focus {
@@ -51,11 +55,15 @@
     text-transform: uppercase;
     text-decoration: none;
     background: #2ce25a;
-    padding: 10px;
+    padding: 5px;
     display: inline-block;
     border: none;
-    font-size: large;
+    font-size: 14px;
   
+  }
+  .sendButton:hover{
+    background-color: #9D0B1B;
+    color: white;
   }
   
   @media (min-width: 590px) and (max-width: 818px) {

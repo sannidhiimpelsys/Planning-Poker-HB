@@ -8,26 +8,28 @@ header{
     margin-left: 30px;
 }
 .unBlurred{
-display: flex;
-justify-content: center;
-
+    display: flex;
+   
 }
 .noname-form{
-    margin-top: 10px;
+   
     display: flex;
-    flex: auto;
+    width: 100%;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #c46a73;
-    padding: 10px;
+    align-items: flex-end;
+    
+   background-color: white;
+   
     z-index: 300;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 0px 50px 30px;
+    /* box-shadow: rgba(0, 0, 0, 0.56) 0px 0px 50px 30px; */
 }
 .noname-form input[type=text]{
     width:80%;
     border-radius: 4px;
+    margin: 0;
+    width: 100%;
+    padding-inline: 16px;
 }
 .name-button{
     background-color: #C10E21;
@@ -36,32 +38,42 @@ justify-content: center;
     width: 121px;
     height: 41px;
     border-radius: 21px;
-    margin-top: 20px;
+    margin-top: 24px;
     font-family: Montserrat;
+    border: 1px solid #C10E21;
   
 }
 #name{
     display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    right: 0;
     z-index: 20;
-    backdrop-filter: blur(4px);
-    overflow: visible;
+    background-color: white;
+    
+    padding: 20px;
     justify-content: center;
     align-items: center;
-   
+    opacity: 1;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.56);
+        overflow: auto;
+        z-index: 450;
 }
 .overlay-name{
     
     display: flex;
-    width:20rem;
+    width:500px;
     z-index: 20;
     justify-content: center;
     align-items: center;
-    
+    height: auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: white;
 }
 .vlBar{
 
@@ -110,11 +122,11 @@ justify-content: center;
 }
 .Cards{
     display: flex;
-    position: absolute;
+    
     justify-content: center;
     margin-bottom: 10px;
     width: 100%;
-    bottom: 0;
+    
     flex-wrap: wrap;
 }
 .Hide{
@@ -154,14 +166,17 @@ justify-content: center;
     font-family:Montserrat;
     font-size: 16px;
     color:  black;
-    
+    font-weight: bold;
     
     text-transform: uppercase;
     display: flex;
     justify-content:center;
     align-items:center;
 }
-
+/* Coffee */
+.fa-coffee{
+    color:white;
+}
 .connect{
     position: fixed;
     bottom: 0;
@@ -175,40 +190,65 @@ justify-content: center;
     z-index: 300;
 }
 .connect button{
-    background-color: greenyellow;
+    background-color: rgb(0, 252, 42);
     position: fixed;
     bottom: 0;
     left: 0;
-    margin: 10px;
+    margin: 5px;
+    padding: 10px;
+    
+    
+}
+.Coffee-button{
+    height: 50px;
+    width: 50px;
+    font-size: 22px;
+    border: none;
+    border-radius: 50%;
 }
 
 .disconnect button{
-    background-color: red;
+    background-color: #C10E21;
     position: fixed;
     bottom: 0;
     left: 0;
-    margin: 10px;
+    margin: 5px;
 }
 /* Jira Link */
-
+.Jira-text{
+    color: #C10E21;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 1em;
+    word-break: keep-all;
+}
+.Jira-text:hover{
+    color: #C10E21;
+}
 .dispnone{
     display: none;
 }
 .Jira-link{
     display: flex;
     width:50%;
-    height:auto;
+    max-width: 497px;
     
-    align-items: center;
+    height:auto;
+    margin-bottom: 10px;
+    align-items: baseline;
     justify-content: center;
 }
 .Jira-outer-link{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 input[type=text].Jira-Text{
     width: 80%;
+    margin: 0;
+    padding-inline: 14px;
+    border-radius: 8px;
 }
 .fa-pencil{
    color: #C10E21;
@@ -219,7 +259,14 @@ input[type=text].Jira-Text{
     border-radius: 8px;
     padding: 2px;
 }
-
+.LinkChange{
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 !important;
+}
 
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -235,3 +282,8 @@ input[type=text].Jira-Text{
       background-color: rgba(255, 255, 255, .8);
     }
   }
+  
+  
+  
+  
+  
