@@ -6,6 +6,7 @@ import Result from "./Result";
 import Backcard from "./backcard";
 import './Table.css'
 const Table = (props) =>{
+  const hand= props.hand;
     const socket = props.socket;
     var [valuelist,setValuelist]=useState([]);
     valuelist=props.valuelist
@@ -39,6 +40,7 @@ const Table = (props) =>{
             <div className="Results">
                         {valuelist.indexOf("waiting")<0 ? (
                             <Result
+                            hand={hand}
                             valuelist = {valuelist}
                             goback = {props.goback}/>
                         ):(<p></p>)}

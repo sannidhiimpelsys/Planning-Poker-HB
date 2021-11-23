@@ -34,6 +34,7 @@ const Poker = () => {
   const [messages, setMessages] = useState([]);
 
   const [hand, setHand] = useState([]);
+  const [hand2, setHand2] = useState([]);
   const [selected, setSelected] = useState("");
   const [placed, setPlaced] = useState([]);
   const [numberofuser, setNumberofuser] = useState(null);
@@ -124,12 +125,14 @@ const Poker = () => {
   const addCards = () => {
     let count = cardVales.length;
     setHand([cardVales[count - 1]]);
-
+    setHand2([cardVales[count - 1]]);
     const interval = setInterval(() => {
       --count;
       if (count === 0) return clearInterval(interval);
       setHand((prevValues) => [...prevValues, cardVales[count - 1]]);
+      setHand2((prevValues) => [...prevValues, cardVales[count - 1]]);
     }, 100);
+    
   };
   const removeCard = (value) => {
     setHand((prevValues) => prevValues.filter((e) => e !== value));
@@ -297,7 +300,7 @@ useEffect(()=>{
       <main className="main-content">
           <div className="Jira-outer-link">
           <div className={showLinks ? "Jira-link": "dispnone"}>
-            <p className={showJira ?"Jira-text":"dispnone" }>Jira Link</p>
+            <p className={showJira ?"Jira-text":"dispnone" }>Jira Link </p>
             <a className="Jira-text" href={""+linkChange} target="_blank" rel="noopener noreferrer">
      
               <p className="LinkChange">{linkChange}</p>
@@ -336,6 +339,7 @@ useEffect(()=>{
           :
            (
             <Table
+              hand={hand2}
               value={placed}
               socket={socket}
               usersnum={numberofuser}
