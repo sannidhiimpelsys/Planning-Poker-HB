@@ -200,11 +200,15 @@ header{
     
 }
 .Coffee-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     width: 50px;
     font-size: 22px;
     border: none;
     border-radius: 50%;
+    padding-bottom: 20px  !important;
 }
 
 .disconnect button{
@@ -213,6 +217,7 @@ header{
     bottom: 0;
     left: 0;
     margin: 5px;
+    padding: 10px;
 }
 /* Jira Link */
 .Jira-text{
