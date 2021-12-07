@@ -8,11 +8,14 @@ import './Table.css'
 const Table = (props) =>{
   const hand= props.hand;
     const socket = props.socket;
+    const coffeeon = props.coffeeon;
     var [valuelist,setValuelist]=useState([]);
     valuelist=props.valuelist
     setValuelist= props.setValuelist
     useEffect(()=>{
+      if(!coffeeon){
         socket.emit("selected",props.value)
+      }
       },[props.value, socket]);
 
       useEffect(()=>{

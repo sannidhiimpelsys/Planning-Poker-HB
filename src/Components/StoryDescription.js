@@ -1,23 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
  import './Story.css';
- 
-
-
-
 const StoryDescription = (props) => {
     const socket = props.socket;
+    const coffeeon = props.coffeeon;
     const [stor,setStor] = useState('');
     const sendStory = (event) =>{
         event.preventDefault();
-        
+        if(!coffeeon){ 
         if(stor){
             socket.emit("story",stor)
         }
+      }
     }
       useEffect(()=>{
+        if(!coffeeon){
         socket.on("story",(data)=>{
             setStor(data);
         })
+      }
       },[socket])
 
 

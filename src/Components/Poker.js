@@ -45,7 +45,7 @@ const Poker = () => {
   const [onBlur, setOnBlur] = useState(true);
   var [noName, setNoName] = useState(false);
   var [flags, noflags] = useState(0);
-
+  const [coffeeon, setCoffeeOn] = useState(false);
  
   const[valuelist,setValuelist]=useState([]);
 
@@ -79,6 +79,7 @@ const Poker = () => {
   //Chat
 
   useEffect(() => {
+    if(!coffeeon){
     socket.on("message", (message) => {
       setMessages((messages) => [...messages, message]);
     });
@@ -89,15 +90,18 @@ const Poker = () => {
     
     socket.on("receive", (data) => {});
 
-   
+  }
   }, []);
 
   //cards
   useEffect(() => {
+    if(!coffeeon){
     addCards();
+    }
   }, []);
 
   useEffect(() => {
+    if(!coffeeon){
     socket.on("playerdet", (data) => {
       setNumberofuser(data);
       console.log(numberofuser);
@@ -113,14 +117,16 @@ const Poker = () => {
     socket.on("selected", (data) => {
       setSelected(data);
     });
-   
+  }
   }, [socket]);
 
   //goback reset
 
   const goback = () => {
     console.log("Reset");
+    if(!coffeeon){
     socket.emit("preach", "reset");
+    }
   };
   const addCards = () => {
     let count = cardVales.length;
@@ -144,9 +150,10 @@ const Poker = () => {
 
   const sendMessage = (event) => {
     event.preventDefault();
-
-    if (message) {
-      socket.emit("sendMessage", message, () => setMessage(""));
+    if(!coffeeon){
+      if (message) {
+        socket.emit("sendMessage", message, () => setMessage(""));
+      }
     }
   };
   //Name Functions
@@ -163,9 +170,9 @@ const cafe = ()=>{
 
   console.log(flags)
  if(flags===0){
-   
+   setCoffeeOn(true)
   socket.disconnect()
-
+  
    console.log("disconnect")
 
    noflags(1)
@@ -234,13 +241,14 @@ const cafe = ()=>{
     return( <RemoveLog />);
   }
 const showUsers = () =>{
-  
+  if(!coffeeon){
   socket.emit('getusers', { name, room }, (error) => {
     // if(error) {
     //   alert(error);
     // }
+  
   });
-
+  }
 }
 const [linkChange, setLinkChange] = useState('');
 const [showLinks, setShowLinks] = useState(true);
@@ -314,7 +322,7 @@ useEffect(()=>{
             </div>
         </div>
       <div className="storyDes ">
-        <StoryDescription socket={socket} />
+        <StoryDescription socket={socket} coffeeon={coffeeon} />
       </div>
       <div className={flags===1 ? "disconnect" : "connect"}>
         <Cofee onClick={() =>cafe()}/>
@@ -344,6 +352,7 @@ useEffect(()=>{
               socket={socket}
               usersnum={numberofuser}
               goback={goback}
+              coffeeon={coffeeon}
               users={users}
               valuelist={valuelist}
               setValuelist={setValuelist}
