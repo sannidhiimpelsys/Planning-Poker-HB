@@ -33,6 +33,7 @@ const Chat = (props) => {
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}
+          coffeeon={props.coffeeon}
         />
       </div>
     </div>

@@ -14,11 +14,10 @@ const StoryDescription = (props) => {
       }
     }
       useEffect(()=>{
-        if(!coffeeon){
         socket.on("story",(data)=>{
             setStor(data);
         })
-      }
+      
       },[socket])
 
 
@@ -31,9 +30,11 @@ const StoryDescription = (props) => {
               placeholder="Brief Your Story"
               value={stor}
               onChange={({ target: { value } }) => setStor(value)}
-              onKeyPress={event => event.key === 'Enter' ? sendStory(event) : null}
+              onKeyPress={(event) => event.key === 'Enter' ? (event)=> { if(!coffeeon){sendStory(event)}} : null}
               ></textarea>
-              <button className="btn sendButtons" onClick={e => sendStory(e)}>Send</button>
+              <button className="btn sendButtons" onClick={(e) =>{
+                sendStory(e);
+                }}>Send</button>
               </form>
             </div>
 

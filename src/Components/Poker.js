@@ -74,8 +74,8 @@ const Poker = () => {
       //   // setBackerror('1');
       // }
     });
-  }, [socket, location.search]);
-  useEffect(() => {}, [socket]);
+  }, [location.search]);
+  
   //Chat
 
   useEffect(() => {
@@ -165,20 +165,20 @@ const Poker = () => {
       some: "state",
     });
   }
-const cafe = ()=>{
+const cafe = (e)=>{
   var { name, room, cardVale } = queryString.parse(location.search);
 
   console.log(flags)
  if(flags===0){
    setCoffeeOn(true)
   socket.disconnect()
-  
+  e.preventDefault();
    console.log("disconnect")
 
    noflags(1)
  }
  else{
-  
+  setCoffeeOn(false)
   socket.emit("join", { name, room, cardVale }, (error) => {
     // if (error) {
     //   alert(error);
@@ -212,7 +212,11 @@ const cafe = ()=>{
             type="button"
             className="name-button"
             onClick={(e) => {
-              handleFlag(value);
+              if(!coffeeon){
+                if (value) {
+                  handleFlag(value);
+                }
+              }             
             }}
           >
             Submit
@@ -308,7 +312,7 @@ useEffect(()=>{
       <main className="main-content">
           <div className="Jira-outer-link">
           <div className={showLinks ? "Jira-link": "dispnone"}>
-            <p className={showJira ?"Jira-text":"dispnone" }>Jira Link </p>
+            <p className={showJira ?"Jira-text":"dispnone" }>Jira Link &#10240;&#10240;</p>
             <a className="Jira-text" href={""+linkChange} target="_blank" rel="noopener noreferrer">
      
               <p className="LinkChange">{linkChange}</p>
@@ -325,7 +329,7 @@ useEffect(()=>{
         <StoryDescription socket={socket} coffeeon={coffeeon} />
       </div>
       <div className={flags===1 ? "disconnect" : "connect"}>
-        <Cofee onClick={() =>cafe()}/>
+        <Cofee onClick={(e) =>cafe(e)}/>
       </div>
 
           {flag !== 1 ? (
@@ -337,7 +341,7 @@ useEffect(()=>{
                 key={value}
                 index={index}
                 value={value}
-                onClick={() => {removeCard(value);showUsers()}}
+                onClick={() => {if(!coffeeon){removeCard(value);showUsers()}}}
               />
             ))
             }
@@ -368,6 +372,7 @@ useEffect(()=>{
                   sendMessage={sendMessage}
                   message={message}
                   messages={messages}
+                  coffeeon={coffeeon}
                 />
       </div>  
     </main>

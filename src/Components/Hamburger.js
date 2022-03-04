@@ -34,7 +34,7 @@ transition: transform 0.3s ease-in-out;
 }
 `
 
-const Menu = ({ open, setMessage, room, name, sendMessage, message, messages, setOpen}) => {
+const Menu = ({ open, setMessage, room, name, sendMessage, message, messages, setOpen, coffeeon}) => {
   return (
     <div className={open ? "Hide" : "NotHide"}>
       
@@ -46,7 +46,7 @@ const Menu = ({ open, setMessage, room, name, sendMessage, message, messages, se
         <span  className="fa fa-close" style={{fontSize:'20px',zIndex:300, color:"#C10E21"}}></span>
     </StyledBurger>
     </div>
-     <Chat  setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} />
+     <Chat  setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} coffeeon={coffeeon}/>
      
     </StyledMenu>
     </div>
@@ -117,7 +117,7 @@ const Hamburger = (props) => {
       <div ref={node}>
       <label htmlFor="Messageicon"  className="sr-only" >Message</label>
         <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages}/>
+        <Menu open={open} setOpen={setOpen} setMessage={setMessage} room={room} name={name} sendMessage={sendMessage} message={message} messages={messages} coffeeon={props.coffeeon}/>
       </div>
     </div>
   )  
