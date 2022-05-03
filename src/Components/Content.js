@@ -185,7 +185,7 @@ const  Content= () => {
                       <input className="Input1 form-control" type="text"  aria-label="Enter User ID"   placeholder="User Name" name="uname" required  onChange={(event) =>setName(event.target.value)}/>
                       <p className='formerror'>{formErrors.name}</p>
 
-                        <input className="Input2 form-control"type="text" aria-label="Enter Room ID" placeholder="Room Name" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
+                        <input className="Input2 form-control"type="text" aria-label="Enter Room ID" placeholder="Room ID" name="roomid" required onChange={(event) =>setRoom(event.target.value)}/>
                         <p className='formerror'>{formErrors.room}</p>
 
                         <label htmlFor="react-select-3-input" className="sr-only">Select your Pattern</label>
